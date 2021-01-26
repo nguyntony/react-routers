@@ -1,0 +1,74 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Nav {
+  color: indianred;
+  background: rgb(205, 92, 92, 0.2);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    width: 25%;
+
+    a {
+      color: indianred;
+    }
+  }
+}
+
+.About {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(100, 149, 237, 0.2);
+
+  p {
+    width: 50%;
+  }
+}
+
+.Home {
+  @extend .About;
+  background: rgb(152, 251, 152, 0.2);
+  width: 100%;
+}
+
+.Shop {
+  @extend .About;
+  background: rgb(238, 232, 170, 0.5);
+  width: 100%;
+
+  .ShopContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .form {
+      @extend .ShopContainer;
+      .Searched {
+        margin: 20px 0;
+      }
+    }
+  }
+
+  .CardsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .Card {
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
