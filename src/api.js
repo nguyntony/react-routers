@@ -8,7 +8,7 @@ const getCards = async (pokemonName, set) => {
         }
     })
     set([...cards])
-    console.log(cards)
+    // console.log(cards)
 }
 
 
@@ -23,10 +23,8 @@ const getOneCard = async(id, set) => {
         name: card.name,
             imgUrl: card.imageUrlHiRes,
             type: card.types[0],
-            abilityName1: card.attacks[0].name || null,
-            abilityDescription1: card.attacks[0].text || null,
-
-
+            abilityName1: card.attacks[0] ? card.attacks[0].name : null,
+            abilityDescription1: card.attacks[0] ? card.attacks[0].text : null,
             abilityName2: card.attacks[1] ? card.attacks[1].name : null,
             abilityDescription2: card.attacks[1] ? card.attacks[1].text : null
     })

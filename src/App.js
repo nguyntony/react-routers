@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import './styles/App.scss';
 import Nav from './components/Nav'
-import routes from './components/routes'
+import {routes, allRoutes} from './components/routes'
 import {CardsProvider} from './contexts/SearchContext'
 
 function App() {
@@ -16,6 +16,8 @@ function App() {
             <Route {...routes.about}/>
             <Route {...routes.shop} exact/>
             <Route {...routes.detailedCard}/>
+
+            {/* {...allRoutes} */}
           </Switch>
 
           </CardsProvider>

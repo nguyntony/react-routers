@@ -1,6 +1,6 @@
 // I may need to use context here
 // import {SearchContext, SearchProvider} from '../contexts/SearchContext'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import {CardsContext} from '../contexts/SearchContext'
 import {getCards} from '../api'
 
@@ -12,27 +12,31 @@ function Form() {
     // handler 
     const inputHandler = e => {
         setSearch(e.target.value)
+        setUserSearch('')
     }
 
-    const formHandler = e => {
+    const formHandler = async(e) => {
         e.preventDefault()
         getCards(search, setCards)
         setUserSearch(search)
         setSearch('')
     }
 
-    return (
 
+    return (
             <div className="form">
                 {/* <p>{search}</p> */}
                 <form onSubmit={formHandler}>
                     <input type="text" value={search} onChange={inputHandler}/>
                     <input type="submit" value="Search"/>
-                    {/* {
-                        cards.length === 0 && 
-                        <p>No results</p>
-                    } */}
+
+                {
+                    cards.length === 0 && userSearch &&
+                    <p className='ErrorMessage'>No results</p>
+                }
+                
                 </form>
+
                 {
                     cards.length > 0 && 
                     <div className="Searched">Results for <strong>{userSearch}</strong></div>
