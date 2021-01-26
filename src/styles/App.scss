@@ -28,6 +28,7 @@
   flex-direction: column;
   align-items: center;
   background: rgb(100, 149, 237, 0.2);
+  width: 100%;
 
   p {
     width: 50%;
@@ -37,13 +38,11 @@
 .Home {
   @extend .About;
   background: rgb(152, 251, 152, 0.2);
-  width: 100%;
 }
 
 .Shop {
   @extend .About;
   background: rgb(238, 232, 170, 0.5);
-  width: 100%;
 
   .ShopContainer {
     display: flex;
@@ -59,7 +58,6 @@
   }
 
   .CardsContainer {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -69,6 +67,30 @@
       margin: 10px;
       display: flex;
       flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.DetailedCard {
+  @extend .About;
+  background: rgb(216, 191, 216, 0.7);
+
+  .CardPhoto {
+    width: 500px;
+    img {
+      width: 100%;
+    }
+  }
+
+  .CardAttacks {
+    width: 75%;
+    text-align: center;
+    p {
+      width: unset;
     }
   }
 }

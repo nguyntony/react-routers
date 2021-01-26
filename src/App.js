@@ -11,9 +11,13 @@ function App() {
         <CardsProvider>
           <Nav/>
   
-          <Route {...routes.home} exact/>
-          <Route {...routes.about}/>
-          <Route {...routes.shop}/>
+          <Switch>
+            <Route {...routes.home} exact/>
+            <Route {...routes.about}/>
+            <Route {...routes.shop} exact/>
+            <Route {...routes.detailedCard}/>
+          </Switch>
+
           </CardsProvider>
       </div>
     </Router>
